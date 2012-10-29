@@ -1,0 +1,7 @@
+Deal with captcha in a clever way (twitter/signup/captcha)
+facebook
+Google
+github
+twitter
+login [userfield, passfield, buttonname,successname, failname]
+changepass [url,userfield,passfield,buttonname, successname, failname]
