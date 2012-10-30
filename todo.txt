@@ -1,4 +1,5 @@
 Deal with captcha in a clever way (twitter/signup/captcha)
+phantomjs/zombiejs
 facebook
 Google
 github
