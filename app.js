@@ -26,6 +26,32 @@ var twitter = {
     change_save     : 'Save changes'
 };
 
+var github = {
+    name            : 'github',
+    loginlink       : 'https://github.com/login',
+    loginfield      : 'login_field',
+    passwordfield   : 'password',
+    signinfield     : 'commit',
+    changelink      : 'https://github.com/settings/admin',
+    change_current  : 'old-password',
+    change_new      : 'new-password',
+    change_confirm  : 'user_password_confimation',
+    change_save     : 'Update Password'
+};
+
+var gmail = {
+    name            : 'gmail',
+    loginlink       : 'https://accounts.google.com/ServiceLogin?service=mail',
+    loginfield      : 'Email',
+    passwordfield   : 'Passwd',
+    signinfield     : 'SignIn',
+    changelink      : 'https://accounts.google.com/b/0/EditPasswd',
+    change_current  : 'OldPasswd',
+    change_new      : 'Passwd',
+    change_confirm  : 'PasswdAgain',
+    change_save     : 'save'
+};
+
 var default_service = {
     loginlink       : '',
     loginfield      : '',
