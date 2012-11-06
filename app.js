@@ -29,27 +29,27 @@ var twitter = {
 var github = {
     name            : 'github',
     loginlink       : 'https://github.com/login',
-    loginfield      : 'login_field',
-    passwordfield   : 'password',
+    loginfield      : '#login_field',
+    passwordfield   : '#password',
     signinfield     : 'commit',
     changelink      : 'https://github.com/settings/admin',
-    change_current  : 'old-password',
-    change_new      : 'new-password',
-    change_confirm  : 'user_password_confimation',
+    change_current  : '#old-password',
+    change_new      : '#new-password',
+    change_confirm  : '#user_password_confirmation',
     change_save     : 'Update Password'
 };
 
 var gmail = {
     name            : 'gmail',
     loginlink       : 'https://accounts.google.com/ServiceLogin?service=mail',
-    loginfield      : 'Email',
-    passwordfield   : 'Passwd',
-    signinfield     : 'SignIn',
+    loginfield      : '#Email',
+    passwordfield   : '#Passwd',
+    signinfield     : '#signIn',
     changelink      : 'https://accounts.google.com/b/0/EditPasswd',
-    change_current  : 'OldPasswd',
-    change_new      : 'Passwd',
-    change_confirm  : 'PasswdAgain',
-    change_save     : 'save'
+    change_current  : '#OldPasswd',
+    change_new      : '#Passwd',
+    change_confirm  : '#PasswdAgain',
+    change_save     : '#save'
 };
 
 var default_service = {
@@ -70,7 +70,7 @@ var user = {
     newpassword : ''
 };
 
-var service = facebook;
+var service = gmail;
 
 var browser = new Browser();
 browser.visit(service.loginlink,function(){
