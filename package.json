@@ -1,0 +1,26 @@
+{
+    "author": "Petter Nyman (http://pttr.se)",
+    "name": "setpass",
+    "description": "Reset your password for multiple services at once",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/peny/setpass.git"
+    },
+    "scripts": {
+        "start": "./bin/setpass.js"
+    },
+    "dependencies": {
+        "zombie": "2.0.x",
+        "optimist" : "0.3.5"
+    },
+    "devDependencies": {},
+    "optionalDependencies": {},
+    "engines": {
+        "node": "*"
+    },
+    "main": "setpass.js",
+    "bin": {
+        "setpass": "/bin/setpass.js"
+    }
+}

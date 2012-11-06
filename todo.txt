@@ -1,9 +1,0 @@
-Deal with captcha in a clever way (twitter/signup/captcha)
-Get some sort of verification that it worked
-//Google
-//github
-//twitter
-//login [userfield, passfield, buttonname,successname, failname]
-//changepass [url,userfield,passfield,buttonname, successname, failname]
-//phantomjs/zombiejs
-//facebook
