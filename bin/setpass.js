@@ -4,53 +4,47 @@ var argv   = require('optimist').usage('Usage: $0 --service [string] --username 
 var client = require('../lib/client');
 
 var user = {
-    username    : '',
-    password    : '',
-    newpassword : ''
+  username    : '',
+  password    : '',
+  newpassword : ''
 };
 
 var generateUser = function(username,password,newpassword,callback){
-    var rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
+  var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
 
-    var cb = _.after(3,function(){
-        callback(null,{
-            username    : username,
-            password    : password,
-            newpassword : newpassword
-        });
-    });
+  function checkData(){
     if(!username){
-        rl.question("Input username:",function(answer){
-            username = answer;
-            rl.resume();
-            cb();
-        });
+      rl.question("Input username:",function(answer){
+        username = answer;
+        checkData();
+      });
+    } else if(!password){
+      rl.question("Input current password:",function(answer){
+        password = answer;
+        checkData();
+      });
+    } else if(!newpassword){
+      rl.question("Input new password:",function(answer){
+        newpassword = answer;
+        checkData();
+      });
     } else {
-        cb();
+      callback(null,{
+        username    : username,
+        password    : password,
+        newpassword : newpassword
+      });
     }
-    if(!password){
-        rl.question("Input current password:",function(answer){
-            password = answer;
-            cb();
-        });
-     } else {
-        cb();
-     }
-    if(!newpassword){
-        rl.question("Input new password:",function(answer){
-            newpassword = answer;
-            cb();
-        });
-    } else {
-        cb();
-    }
-};
+  }
+
+  checkData();
+}
 
 generateUser('','','',function(err,res){
-    console.log(res);
+  console.log(res);
 });
 
 var service = require('../services/twitter');
