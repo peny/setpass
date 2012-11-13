@@ -1,7 +1,9 @@
 var readline = require('readline');
 var _   = require('underscore');
-var argv   = require('optimist').usage('Usage: $0 --service [string] --username [string] --password [string] --newpassword [string]').argv;
+var argv   = require('optimist').usage('Usage: $0 --service [string] --username [string] --password [string] --newpassword [string]').demand(['service']).argv;
 var client = require('../lib/client');
+
+var service = require('../services/'+argv.service)();
 
 var user = {
   username    : '',
@@ -43,8 +45,14 @@ var generateUser = function(username,password,newpassword,callback){
   checkData();
 }
 
-generateUser('','','',function(err,res){
-  console.log(res);
+generateUser(argv.username,argv.password,argv.newpassword,function(err,res){
+  client.changePassword(service,res,function(err,res){
+    if(err){
+      console.log(err);
+    } else {
+      console.log(res);
+    }
+    process.exit();
+  });
 });
 
-var service = require('../services/twitter');
