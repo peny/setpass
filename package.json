@@ -2,7 +2,7 @@
   "author": "Petter Nyman (http://pttr.se)",
   "name": "setpass",
   "description": "Change your password for popular services from your command line",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
     "url": "git://github.com/peny/setpass.git"
