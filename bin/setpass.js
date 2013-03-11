@@ -1,9 +1,19 @@
-var readline = require('readline');
 var _   = require('underscore');
-var argv   = require('optimist').usage('Usage: $0 --service [string] --username [string] --password [string] --newpassword [string]').demand(['service']).argv;
+var argv   = require('optimist').usage('Usage: $0 --service [string] --username [string] --password [string] --newpassword [string] --silent [boolean]').demand(['service'])
+    .alias('s', 'service')
+    .alias('u', 'username')
+    .alias('p', 'password')
+    .alias('n', 'newpassword')
+    .alias('si', 'silent')
+    .argv;
 var client = require('../lib/client');
+var program = require('commander');
 
 var service = require('../services/'+argv.service)();
+var options = {
+    service     : service,
+    silent      : argv.silent
+};
 
 var user = {
   username    : '',
@@ -12,27 +22,25 @@ var user = {
 };
 
 var generateUser = function(username,password,newpassword,callback){
-  var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
 
   function checkData(){
     if(!username){
-      rl.question("Input username:",function(answer){
-        username = answer;
-        checkData();
-      });
+        program.prompt('Username: ', function(name){
+            username = name;
+            checkData();
+        });
     } else if(!password){
-      rl.question("Input current password:",function(answer){
-        password = answer;
-        checkData();
-      });
+        program.password('Current password: ', '*', function(pass){
+            password = pass;
+            //process.stdin.destroy();
+            checkData();
+        });
     } else if(!newpassword){
-      rl.question("Input new password:",function(answer){
-        newpassword = answer;
-        checkData();
-      });
+        program.password('New password: ', '*', function(pass){
+            newpassword = pass;
+            //process.stdin.destroy();
+            checkData();
+        });
     } else {
       callback(null,{
         username    : username,
@@ -46,11 +54,11 @@ var generateUser = function(username,password,newpassword,callback){
 }
 
 generateUser(argv.username,argv.password,argv.newpassword,function(err,res){
-  client.changePassword(service,res,function(err,res){
+  client.changePassword(options,res,function(err,res){
     if(err){
       console.log(err);
     } else {
-      console.log(res);
+        !options.silent ? console.log(res) : '';
     }
     process.exit();
   });
