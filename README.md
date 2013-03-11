@@ -19,6 +19,10 @@ $ setpass --service twitter --username username --password pass --newpassword wo
 
 *__username__, __password__ and __newpassword__ are all optional, there is a pretty CLI interface waiting for you if you skip any of them*
 
+```bash
+$ setpass --service gmail
+```
+
 ###Did you know:
 Under some distros a space before a bash command will cause it not to be saved to history
 
