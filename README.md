@@ -1,7 +1,7 @@
 setpass
 =======
 
-Change your password for multiple services with your command line
+Change your password for popular services from your command line
 
 ## Currently supported services
 * facebook
