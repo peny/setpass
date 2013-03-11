@@ -25,9 +25,9 @@ Under some distros a space before a bash command will cause it not to be saved t
 ## Options
 ```
 Options:
-  --service                 Service to change password for                [required]
+  --service, -s             Service to change password for                [required]
   --username, -u            Username
   --password, -p            Current password
   --newpassword, -n         New password
-  --silent, -s              Do not log password change status
+  --silent                  Do not log password change status
 ```

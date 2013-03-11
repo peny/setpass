@@ -4,7 +4,6 @@ var argv   = require('optimist').usage('Usage: $0 --service [string] --username 
     .alias('u', 'username')
     .alias('p', 'password')
     .alias('n', 'newpassword')
-    .alias('si', 'silent')
     .argv;
 var client = require('../lib/client');
 var program = require('commander');
