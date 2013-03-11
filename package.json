@@ -2,7 +2,7 @@
   "author": "Petter Nyman (http://pttr.se)",
   "name": "setpass",
   "description": "Reset your password for multiple services at once",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/peny/setpass.git"
