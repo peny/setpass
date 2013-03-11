@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var _   = require('underscore');
 var argv   = require('optimist').usage('Usage: $0 --service [string] --username [string] --password [string] --newpassword [string] --silent [boolean]').demand(['service'])
     .alias('s', 'service')
