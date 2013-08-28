@@ -7,7 +7,7 @@ var argv   = require('optimist').usage('Usage: $0 --service [string] --username 
     .alias('p', 'password')
     .alias('n', 'newpassword')
     .argv;
-var client = require('../lib/client');
+var client = require('../lib/app');
 var program = require('commander');
 
 var service = require('../services/'+argv.service)();

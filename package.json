@@ -14,7 +14,7 @@
     "optimist": "0.3.5",
     "underscore": "1.4.2",
     "commander": "~1.1.1",
-    "zombie": "~2.0.0-alpha9"
+    "zombie": "~2.0.0-alpha12"
   },
   "devDependencies": {},
   "optionalDependencies": {},
